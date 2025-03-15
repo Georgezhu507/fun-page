@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>趣味页面</title>
+    <script type="text/javascript">
+        function checkInput() {
+            var input = document.getElementById("inputBox").value;
+            if (input !== "爸爸") {
+                alert("请输入“爸爸”才能关闭此页面！");
+                return false;
+            }
+            return true;
+        }
+
+        window.onbeforeunload = function() {
+            var input = document.getElementById("inputBox").value;
+            if (input !== "爸爸") {
+                return "请输入“爸爸”才能关闭此页面！";
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>你好！</h1>
+    <p>请输入“爸爸”来关闭此页面：</p>
+    <input type="text" id="inputBox" placeholder="请输入“爸爸”">
+    <button onclick="checkInput()">提交</button>
+</body>
+</html>
